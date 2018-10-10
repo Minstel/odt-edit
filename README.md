@@ -86,6 +86,8 @@ Values, that go earlier in `data` object, can reference later values. For exampl
 }
 ```
 
+In response edited file is returned.
+
 Limitations
 ---
 

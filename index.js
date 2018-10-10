@@ -14,10 +14,8 @@ app.locals.tmpFolder = __dirname + '/tmp';
 setRoutes(app);
 setErrorHandler(app);
 
-app.listen(port, (err) => {
-    if (err) {
-        return console.log('There was an error: ', err)
-    }
-
-    console.log(`server is listening on ${port}`)
+app.listen(port, error => {
+    error ?
+        console.error('There was an error while launching server: ' + error) :
+        console.log('Server is listening on ' + port);
 });

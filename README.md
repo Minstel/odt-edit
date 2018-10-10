@@ -22,7 +22,7 @@ node index.js
 Usage
 ---
 
-Application API has a single path to call - `POST /`. So it's a POST request to server root. Request should be of type `multipart/form-data`. There should be two parameters for this request:
+Application API has a single path to call - `POST /`. Request should be of type `multipart/form-data`. There should be two parameters for this request:
 
 * `template` - `.odt` or `.ott` file
 * `data` - JSON object, that holds data to insert into template
@@ -92,4 +92,4 @@ Limitations
 For now it works in a pretty straitforward way:
 
 * No cycles or conditions support, like in big template engines. Just substitution of values. 
-* One can not use placeholder like `PERSON.CONTACT`, trying to insert the whole array, casting it to string. Such placeholder will be ignored. Only the primitive values, located at the end of keypaths, are inserted into template.
+* One can not use placeholders like `PERSON.CONTACT`, trying to insert the whole array, casting it to string. Such placeholder will be ignored. Only the primitive values, located at the end of keypaths, are inserted into template.

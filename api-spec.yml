@@ -1,0 +1,49 @@
+swagger: "2.0"
+
+info:
+  version: 1.0.0
+  title: ODT Editor API
+  description: API for editing LibreOffice text files
+
+schemes:
+  - http
+
+consumes:
+  - application/vnd.oasis.opendocument.text
+  - application/vnd.oasis.opendocument.text-template
+
+produces:
+  - application/vnd.oasis.opendocument.text
+  - application/vnd.oasis.opendocument.text-template
+  - application/json  
+
+paths: 
+  /:
+    post:
+      summary: Edit .ODT or .OTT file
+      description: Returns edited file with data inserted
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: template
+          in: formData
+          description: File to edit
+          type: file
+          required: true
+          x-mimetype:
+            - application/vnd.oasis.opendocument.text
+            - application/vnd.oasis.opendocument.text-template
+        - name: data
+          in: formData
+          description: String, holding json object with data, that should be inserted into template
+          type: string
+          required: true
+      responses:
+        200:
+          description: Edited file
+          content:
+            application/vnd.oasis.opendocument.text:
+            application/vnd.oasis.opendocument.text-template:
+
+        500:
+          description: Error in input or while processing document

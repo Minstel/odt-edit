@@ -22,7 +22,12 @@ node index.js
 Usage
 ---
 
-Application API has a single path to call - `POST /`. Request should be of type `multipart/form-data`. There should be two parameters for this request:
+Application API has the following requests available:
+
+* `GET /` - returns some general inormation about service
+* `POST /` - performs editing of provided file. 
+
+Post request should be of type `multipart/form-data`. It should have two parameters:
 
 * `template` - `.odt` or `.ott` file
 * `data` - JSON object, that holds data to insert into template

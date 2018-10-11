@@ -19,6 +19,16 @@ produces:
 
 paths: 
   /:
+    get:
+      summary: Default action
+      description: Some general info about service
+      responses:
+        200:
+          description: Service info
+          content: 
+            application/json:
+              schema:
+                type: object
     post:
       summary: Edit .ODT or .OTT file
       description: Returns edited file with data inserted
@@ -43,7 +53,15 @@ paths:
           description: Edited file
           content:
             application/vnd.oasis.opendocument.text:
+              schema:
+                type: file
             application/vnd.oasis.opendocument.text-template:
-
+              schema:
+                type: file
         500:
           description: Error in input or while processing document
+          content: 
+            application/json:
+              schema:
+                type: object
+                

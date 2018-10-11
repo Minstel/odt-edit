@@ -95,3 +95,8 @@ For now it works in a pretty straitforward way:
 
 * No cycles or conditions support, like in big template engines. Just substitution of values. 
 * One can not use placeholders like `PERSON.CONTACT`, trying to insert the whole array, casting it to string. Such placeholder will be ignored. Only the primitive values, located at the end of keypaths, are inserted into template.
+
+API documentation
+---
+
+Swagger is used for creating interactive API documentation. It can be accessed through `GET /api-docs`.
